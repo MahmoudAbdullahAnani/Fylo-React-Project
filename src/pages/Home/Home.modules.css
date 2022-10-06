@@ -1,0 +1,18 @@
+.auto{
+    margin: auto;
+}
+.galre-image > img {
+    margin: auto;
+}
+.image-top-galre >img{
+    position: relative;
+    animation: show infinite  alternate-reverse .7s ;
+    -webkit-animation: show infinite  alternate-reverse .7s ;
+}
+@keyframes show{
+    from {top: 6px;}
+    to {top: -6px;}
+}
+svg{
+    width: fit-content;
+}

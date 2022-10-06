@@ -1,0 +1,27 @@
+.curvy > img {
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.curvy {
+    position: relative;
+    background: #181f2b;
+}
+.productive{
+    background: #181f2b;
+}
+.fyloImproved{
+    background: #181f2b;
+    position: relative;
+    /* max-height: 130vh; */
+}
+.fyloImproved > img{
+    position: absolute;
+    top: 35px;
+    left: 30px;
+    /* z-index: -1; */
+}
+.stish{
+    z-index: 10;
+}

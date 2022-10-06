@@ -1,0 +1,32 @@
+.active{
+  border-bottom: 1px solid white;
+  color: white !important;
+}
+.nav-item a {
+  width: fit-content;
+}
+
+.nav-item a:hover {
+  color: white!important
+}
+.securely-link > img{
+  display: inline;
+  position: relative;
+  animation: arrw infinite  alternate-reverse .7s ;
+  -webkit-animation: arrw infinite  alternate-reverse .7s ;
+}
+
+@keyframes arrw{
+  from {left: 5px;}
+  to {left: -5px;}
+}
+.cart>img{
+  /* max-width: 5%; */
+  width: 4rem;
+  display: inline;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
