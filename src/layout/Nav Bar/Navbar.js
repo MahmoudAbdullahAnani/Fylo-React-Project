@@ -1,36 +1,67 @@
-import { React } from 'react';
-import logo from './images/logo.svg'
-import { Link } from "react-router-dom";
-function Navbar(props){
-    return(
-        <>
-            <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-gray-800  animate__animated animate__bounce animate__slideInDown">
-              <div className="container">
-                <Link className="navbar-brand " to="/home">
-                    <img src={logo} className="w-50  " alt='...' />
-                  </Link>
-                <button className="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li className="nav-item ">
-                      <Link className={props.home}  to="/home">Home</Link>
-                    </li>
-                    <li className="nav-item ">
-                      <Link className={props.features} to="/features">Features</Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className={props.tems} to="/tems">Tems</Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className={props.signIn} to="/sign-in">Sign in</Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-</nav>
-        </>
-    )
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Offcanvas from "react-bootstrap/Offcanvas";
+
+
+import logo from "./images/logo.svg"
+function OffcanvasExample() {
+  return (
+    <>
+      {["xxl"].map((expand) => (
+        <Navbar
+          key={expand}
+          bg="dark"
+          expand={expand}
+          className="mb-3 "
+          fixed="top"
+        >
+          <Container fluid>
+            <Navbar.Brand href="#">
+              <img width={`100`} src={logo} alt="..." />
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-${expand}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              placement="end"
+              className="bg-dark"
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title
+                  className="text-white"
+                  id={`offcanvasNavbarLabel-expand-${expand}`}
+                >
+                  Fylo
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Nav className="justify-content-end  flex-grow-1 pe-3">
+                  <Nav.Link href="#action1" className="text-white">
+                    Home
+                  </Nav.Link>
+                  <Nav.Link href="#action2" className="text-white">
+                    Contact
+                  </Nav.Link>
+                </Nav>
+                <Form className="d-flex">
+                  <Form.Control
+                    type="search"
+                    placeholder="Search"
+                    className="me-2"
+                    aria-label="Search"
+                  />
+                  <Button variant="outline-success">Search</Button>
+                </Form>
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+      ))}
+    </>
+  );
 }
-export default Navbar;
+
+export default OffcanvasExample;
