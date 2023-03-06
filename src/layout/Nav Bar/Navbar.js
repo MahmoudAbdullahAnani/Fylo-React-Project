@@ -44,6 +44,12 @@ function OffcanvasExample() {
                   </Nav.Link>
                   <Nav.Link href="#action2" className="text-white">
                     Contact
+                  </Nav.Link>{" "}
+                  <Nav.Link href="#action2" className="text-white">
+                    About
+                  </Nav.Link>
+                  <Nav.Link href="#action2" className="text-white">
+                    Projects
                   </Nav.Link>
                 </Nav>
                 <Form className="d-flex">
@@ -53,7 +59,7 @@ function OffcanvasExample() {
                     className="me-2"
                     aria-label="Search"
                   />
-                  <Button variant="outline-success">Search</Button>
+                  <Button variant="outline-secondary">Search</Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

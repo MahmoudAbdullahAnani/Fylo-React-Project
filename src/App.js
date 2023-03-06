@@ -6,6 +6,7 @@ import Team from './pages/Team/Team';
 import SignIn from './pages/Sign in/SignIn';
 import { useEffect, useState } from 'react';
 import Lodeing from './layout/Loding/Loding';
+import CopyRight from './layout/Footer/CopyRight';
 
 function App() {
   const [loder, setLoder] = useState(false)
@@ -17,35 +18,57 @@ function App() {
   },[])
   return (
     <>
-    {loder ? <Lodeing/> :
-      <Routes>
-        <Route path='/' element={
-          <>
-            <Home />
-          </>
-        }/>
-        <Route path='/home' element={
-          <>
-            <Home />
-          </>
-        }/>
-        <Route path='/features' element={
-          <>
-            <Features />
-          </>
-        }/>
-        <Route path='/tems' element={
-          <>
-            <Team />
-          </>
-        }/>
-        <Route path='/sign-in' element={
-          <>
-            <SignIn />
-          </>
-        }/>
-      </Routes>
-      }
+      {loder ? (
+        <Lodeing />
+      ) : (
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Home />
+                <CopyRight />
+              </>
+            }
+          />
+          <Route
+            path="/home"
+            element={
+              <>
+                <Home />
+                <CopyRight />
+              </>
+            }
+          />
+          <Route
+            path="/features"
+            element={
+              <>
+                <Features />
+                <CopyRight />
+              </>
+            }
+          />
+          <Route
+            path="/tems"
+            element={
+              <>
+                <Team />
+                <CopyRight />
+              </>
+            }
+          />
+          <Route
+            path="/sign-in"
+            element={
+              <>
+                <SignIn />
+                <CopyRight />
+              </>
+            }
+          />
+        </Routes>
+      )}
     </>
   );
 }
