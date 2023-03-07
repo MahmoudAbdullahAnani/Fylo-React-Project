@@ -4,10 +4,12 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { Link, useLocation } from "react-router-dom";
 
 
 import logo from "./images/logo.svg"
-function OffcanvasExample() {
+function NavbarComponent() {
+ let { pathname } = useLocation();
   return (
     <>
       {["xxl"].map((expand) => (
@@ -45,18 +47,38 @@ function OffcanvasExample() {
               </div>
               <Offcanvas.Body>
                 <Nav className="justify-content-end  flex-grow-1 pe-3">
-                  <Nav.Link href="#action1" className="text-white">
+                  <Link
+                    to="/"
+                    className={`${
+                      pathname === "/" ? "text-secondary" : "text-white"
+                    }  pt-2 m-0 p-0 ms-5 text-decoration-none fw-bolder `}
+                  >
                     Home
-                  </Nav.Link>
-                  <Nav.Link href="#action2" className="text-white">
-                    Contact
-                  </Nav.Link>{" "}
-                  <Nav.Link href="#action2" className="text-white">
-                    About
-                  </Nav.Link>
-                  <Nav.Link href="#action2" className="text-white">
-                    Projects
-                  </Nav.Link>
+                  </Link>
+                  <Link
+                    to="/tems"
+                    className={`${
+                      pathname === "/tems" ? "text-secondary" : "text-white"
+                    }  pt-2 m-0 p-0 ms-5 text-decoration-none fw-bolder`}
+                  >
+                    Tems
+                  </Link>
+                  <Link
+                    to="/features"
+                    className={`${
+                      pathname === "/features" ? "text-secondary" : "text-white"
+                    } pt-2 m-0 p-0 ms-5 text-decoration-none fw-bolder`}
+                  >
+                    Features
+                  </Link>
+                  <Link
+                    to="/sign-in"
+                    className={`${
+                      pathname === "/sign-in" ? "text-secondary" : "text-white"
+                    } pt-2 m-0 p-0 ms-5 text-decoration-none fw-bolder`}
+                  >
+                    Sign-in
+                  </Link>
                 </Nav>
                 <Form className="d-flex">
                   <Form.Control
@@ -76,4 +98,4 @@ function OffcanvasExample() {
   );
 }
 
-export default OffcanvasExample;
+export default NavbarComponent;

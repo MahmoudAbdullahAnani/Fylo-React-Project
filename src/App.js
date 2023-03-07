@@ -7,6 +7,7 @@ import SignIn from './pages/Sign in/SignIn';
 import { useEffect, useState } from 'react';
 import Lodeing from './layout/Loding/Loding';
 import CopyRight from './layout/Footer/CopyRight';
+import NavbarComponent from './layout/Nav Bar/Navbar';
 
 function App() {
   const [loder, setLoder] = useState(false)
@@ -14,60 +15,54 @@ function App() {
     setLoder(true)
     setTimeout(()=>{
       setLoder(false)
-    },2000)
+    },1000)
   },[])
   return (
     <>
       {loder ? (
         <Lodeing />
       ) : (
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Home />
-                <CopyRight />
-              </>
-            }
-          />
-          <Route
-            path="/home"
-            element={
-              <>
-                <Home />
-                <CopyRight />
-              </>
-            }
-          />
-          <Route
-            path="/features"
-            element={
-              <>
-                <Features />
-                <CopyRight />
-              </>
-            }
-          />
-          <Route
-            path="/tems"
-            element={
-              <>
-                <Team />
-                <CopyRight />
-              </>
-            }
-          />
-          <Route
-            path="/sign-in"
-            element={
-              <>
-                <SignIn />
-                <CopyRight />
-              </>
-            }
-          />
-        </Routes>
+          <>
+            <NavbarComponent/>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Home />
+                </>
+              }
+            />
+            <Route
+              path="/features"
+              element={
+                <>
+                  <Features />
+                  <CopyRight />
+                </>
+              }
+            />
+            <Route
+              path="/tems"
+              element={
+                <>
+                  <Team />
+                  <CopyRight />
+                </>
+              }
+            />
+            <Route
+              path="/sign-in"
+              element={
+                <>
+                  <SignIn />
+                  <CopyRight />
+                </>
+              }
+            />
+            </Routes>
+            <CopyRight/>
+        </>
       )}
     </>
   );
