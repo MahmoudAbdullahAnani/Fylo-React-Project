@@ -22,21 +22,27 @@ function OffcanvasExample() {
             <Navbar.Brand href="#">
               <img width={`100`} src={logo} alt="..." />
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <div className="bg-white rounded">
+              <Navbar.Toggle
+                aria-controls={`offcanvasNavbar-expand-${expand}`}
+              />
+            </div>
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
               className="bg-dark"
             >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title
-                  className="text-white"
-                  id={`offcanvasNavbarLabel-expand-${expand}`}
-                >
-                  Fylo
-                </Offcanvas.Title>
-              </Offcanvas.Header>
+              <div className="bg-light">
+                <Offcanvas.Header closeButton>
+                  <Offcanvas.Title
+                    className="text-dark font-monospace"
+                    id={`offcanvasNavbarLabel-expand-${expand}`}
+                  >
+                    Fylo
+                  </Offcanvas.Title>
+                </Offcanvas.Header>
+              </div>
               <Offcanvas.Body>
                 <Nav className="justify-content-end  flex-grow-1 pe-3">
                   <Nav.Link href="#action1" className="text-white">
