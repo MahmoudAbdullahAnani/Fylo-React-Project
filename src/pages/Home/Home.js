@@ -29,7 +29,7 @@ function Home() {
         <motion.div
           className="text-white text-center px-10"
           initial={{ x: "-100vw", opacity: 0 }}
-          animate={{ x: -1000, opacity: 1 }}
+          animate={{ x: -100, opacity: 1 }}
           transition={{
             duration: 0.8,
             type: "tween",

@@ -5,7 +5,7 @@ function Futshar(props) {
     <motion.div
       className={props.defoultClass}
       initial={{ x: "-100vw", opacity: 0 }}
-      animate={{ x: -300, opacity: 1 }}
+      animate={{ x: -100, opacity: 1 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ damping: 100, duration: 0.7 }}
     >
