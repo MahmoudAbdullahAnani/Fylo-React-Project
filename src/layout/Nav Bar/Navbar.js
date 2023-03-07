@@ -33,7 +33,7 @@ function NavbarComponent() {
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
-              className="bg-dark"
+              className="bg-dark z-1"
             >
               <div className="bg-light">
                 <Offcanvas.Header closeButton>
@@ -43,6 +43,9 @@ function NavbarComponent() {
                   >
                     Fylo
                   </Offcanvas.Title>
+                  <span className="fs-2 text-dark ms-auto position-absolute end-0 me-3 ">
+                    +
+                  </span>
                 </Offcanvas.Header>
               </div>
               <Offcanvas.Body>
@@ -80,7 +83,7 @@ function NavbarComponent() {
                     Sign-in
                   </Link>
                 </Nav>
-                <Form className="d-flex">
+                <Form className="d-flex mt-2">
                   <Form.Control
                     type="search"
                     placeholder="Search"
